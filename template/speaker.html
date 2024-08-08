@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+
+{% block title %} camera {% endblock title %}
+
+
+{% block body %}
+
+<div class="container" id="productsdetails">
+    <div class="row">
+        <div class="col-md-7">
+
+            <img src="/static/images/speakers.jpg" alt="" class="img-fluid" id="">
+        </div>
+        <div class="col-md-5">
+            <h3>JBL Go 3, Wireless Ultra Portable Bluetooth Speaker, JBL Pro Sound, Vibrant Colors with Rugged Fabric
+                Design, Waterproof, Type C (Without Mic, Black)</h3>
+
+            <div class="discription mt-3">
+                <p>
+                    <span> JBL Go 3, Wireless Ultra Portable Bluetooth Speaker <br>
+                        <div class="rating my-3" style="justify-content: start;" >
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            
+                        </div>
+                        Rs. 83,980.00<br>
+                        Free Shipping (India)<br>
+                        Brand New Unit(s)<br>
+                        Price Includes GST<br>
+                        EMI Payment Option Available<br>
+                        3/6 Months - No Cost EMI on All Orders above 30,000
+                    </span>
+                </p>
+
+                <button type="button" class="btn btn-primary btn-lg  mt-4" id="addtocart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="navdis">
+    <div class="row" id="navdis">
+        <div class="col-md-10">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Discription</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Additional
+                        information</button>
+                </li>
+
+
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active mb" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    <ul class="mt-4">
+                        <h5>Key Features</h5>
+                        <li>Ultimate JBL Pro Sound: Enjoy signature JBL bass without any distortion</li>
+                        <li>Port-anywhere: Feather light, ultra-portable grab-and-go design </li>
+                        <li>IP67 water-resistant and dust-resistant: Engineered to withstand splashes and sand </li>
+                        <li>Quick-Connect: Experience your music and movies without any lagging with Bluetooth 5.1s
+                            Insta-sync </li>
+                        <li>Mega Playtime: One single charge = upto 5 Hour battery backup under optimum audio settings
+                        </li>
+                        <li></li>
+                        <li>USB Type C charging. Charging time 2.5hrs..</li>
+                        <li>Whats in the box: 1 x JBL Go3, 1 x Type C USB cable, 1 x safety sheet, 1 x quick start
+                            guide, 1 x warranty card
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="tab-pane fade  mt-4" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    <p>Model : JBL Go 3, Wireless Ultra Portable Bluetooth Speaker<b></b><br><br>
+                        The compact JBL Go 3 packs quite a punch when it comes to its crystal-clear sound. Enjoy
+                        signature JBL bass at 4.2W RMS without any distortion, no matter the audio range.<br><br> </p>
+                    <ol>
+
+
+                        <li>Mega Playtime and Quick Pairing
+                            Experiencing a lag between your audio and video is such a buzzkill. Say goodbye to latency
+                            with Go 3’s latest Bluetooth 5.1. Packed with a Li-ion polymer 2.775Wh battery, the Go 3
+                            sure has power double its size. Charge it just once and enjoy a whopping battery backup of 5
+                            hours.</li>
+                        <li>IP67 Water-Resistant and Dust-Resistant</li>
+                        <li>Edgy Design, Ultra Portable</li>
+                        <li>Enjoy all your music and movies with rich, realistic audio.</li>
+                        <li>Ultimate JBL Sound</li>
+                        <li>JBL engineering high-definition imaging waveguide design and 1” aluminum dome tweeters</li>
+                        <li>Two-tone unique design for wood</li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container  mb-5 " id="also">
+    <h2 class="text-center mb-5">You May Also Like</h2>
+    <div class="row row-cols-1 row-cols-md-2  row-cols-lg-4 g-4  mb-4">
+        <div class="col  bg-image hover-overlay hover-zoom hover-shadow ripple"><a href="charger"><img src="/static/images/charger.jpg"
+                alt="" class="img-fluid " style="min-width:70%;"></a>
+            <div class="des">
+                <span>iPhone</span>
+                <b><a href="charger">
+
+                        <h5> charger</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="camera"><img src="/static/images/camera.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>Nikon</span>
+                <b><a href="camera">
+
+                        <h5>Camera</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="iphone"><img src="/static/images/iphone.png" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>iphone</span>
+                <b><a href="iphone">
+
+                        <h5>iphone 13 pro Max</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="smartWatch"><img src="/static/images/smartwatch.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>boat</span>
+                <b><a href="smartWatch">
+
+                        <h5>Smart Watch</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock body %}

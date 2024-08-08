@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+
+{% block title %} camera {% endblock title %}
+
+
+{% block body %}
+
+<div class="container" id="productsdetails">
+    <div class="row">
+        <div class="col-md-7">
+
+            <img src="/static/images/headphones.jpg" alt="" class="img-fluid" id="">
+        </div>
+        <div class="col-md-5">
+            <h3>boAt Rockerz 551 ANC with Hybrid ANC, 100 HRS Playback, 40mm Drivers & ASAP Charge Bluetooth Headset  (Stellar Black, On the Ear)</h3>
+
+            <div class="discription mt-3">
+                <p>
+                    <span> boAt Rockerz 551 Wireless Headphone with Bluetooth 5.0, Immersive Audio, Lightweight Ergonomic Design, audio bliss.
+                        <div class="rating my-3" style="justify-content: start;" >
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            
+                        </div>
+                        Rs. 83,980.00<br>
+                        Free Shipping (India)<br>
+                        Brand New Unit(s)<br>
+                        Price Includes GST<br>
+                        EMI Payment Option Available<br>
+                        3/6 Months - No Cost EMI on All Orders above 30,000
+                    </span>
+                </p>
+
+                <button type="button" class="btn btn-primary btn-lg  mt-4" id="addtocart">Add to Cart</button>
+                <a href="laptop{{i.id}}"><button id="qv{{i.id}}" class="btn btn-primary cart">Quick View</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="navdis">
+    <div class="row" id="navdis">
+        <div class="col-md-10">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Discription</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Additional
+                        information</button>
+                </li>
+
+
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active mb" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    <ul class="mt-4">
+                        <h5>boAt Rockerz 551 ANC with Hybrid ANC, 100 HRS Playback</h5>
+                        <li>With Mic:Yes</li>
+                        <li>100 Hours Playback</li>
+                        <li>Hybrid Active Noise Cancellation: upto 35dB</li>
+                        <li>40mm Drivers: boAt Signature Sound</li>
+                        <li>ASAP Charge: 10 Mins= 10 Hours</li>
+                        <li>Dual EQ Modes: Signature Mode and Balanced Mode</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade  mt-4" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    <p><b>Model :boAt Rockerz 551 </b><br><br> I
+                        The headphones come equipped with latest Bluetooth v5.0 for instant wireless connectivity. Its powerful 300mAh battery provides a playtime of up to 12 hours for an extended audio bliss.<br><br> </p>
+                    <ol>
+                        <li>
+                            The user can utilize the headset via dual connectivity in the form of Bluetooth and AUX
+                            DX or FX format sensors for various crop factors and image quality levels.
+                            High megapixel counts for detailed images.</li>
+                        </li>
+                        <li> 40mm Dynamic Drivers supply immersive High Definition sound</li>
+                        <li> 1 year warranty from the date of purchase</li>
+                        <li> The headset has padded earcups for a cosy experience</li>
+                        <li> The headphone has been ergonomically and aesthetically designed for a seamless experience</li>
+                        <li>One can connect to Rockerz 370 via dual modes for connectivity in the form of Bluetooth and AUX</li>
+                        <li> Additional ₹2,000 off for employees of select organisations.</li>
+                    </ol>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container  mb-5 " id="also">
+    <h2 class="text-center mb-5">You May Also Like</h2>
+    <div class="row row-cols-1 row-cols-md-2  row-cols-lg-4 g-4  mb-4">
+        <div class="col  bg-image hover-overlay hover-zoom hover-shadow ripple"><a href="charger"><img src="/static/images/charger.jpg"
+                alt="" class="img-fluid " style="min-width:70%;"></a>
+            <div class="des">
+                <span>iPhone</span>
+                <b><a href="charger">
+
+                        <h5> charger</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="camera"><img src="/static/images/camera.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>Nikon</span>
+                <b><a href="camera">
+
+                        <h5>Camera</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="iphone"><img src="/static/images/iphone.png" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>iphone</span>
+                <b><a href="iphone">
+
+                        <h5>iphone 13 pro Max</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="smartWatch"><img src="/static/images/smartwatch.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>boat</span>
+                <b><a href="smartWatch">
+
+                        <h5>Smart Watch</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock body %}

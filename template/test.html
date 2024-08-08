@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block title %} camera {% endblock title %}
+
+
+{% block body %}
+
+<div class="col-md-6 mb40">
+    <h2>Nice to hear from you</h2>
+    <p>
+        Get accurate quotes. Please include product name, order quantity, usage, special
+        requests if any in your inquiry.
+    </p>
+    <div class="smart-wrap">
+        <div class="smart-forms smart-container">
+
+
+            <form action="https://formsubmit.co/2c49384a971860cc93b68097cab743c7" method="POST">
+                <div class="form-body">
+
+                    <div class="section">
+                        <label class="field prepend-icon">
+                            <input type="text" name="name" id="name" class="gui-input" placeholder="Enter name">
+                            <span class="field-icon"><i class="fa fa-user"></i></span>
+                        </label>
+                    </div><!-- end section -->
+
+                    <div class="section">
+                        <label class="field prepend-icon">
+                            <input type="email" name="email" id="email" class="gui-input" placeholder="Email address">
+                            <span class="field-icon"><i class="fa fa-envelope"></i></span>
+                        </label>
+                    </div><!-- end section -->
+
+                    <div class="section">
+                        <label class="field prepend-icon">
+                            <input type="number" name="mobile" id="mobile" class="gui-input" placeholder="Enter Phone No.">
+                            <span class="field-icon"><i class="fa fa-phone"></i></span>
+                        </label>
+                    </div><!-- end section -->
+
+                    <div class="section">
+                        <label class="field prepend-icon">
+                            <input type="text" name="subject" id="subject" class="gui-input" placeholder="Enter subject">
+                            <span class="field-icon"><i class="fa fa-lightbulb-o"></i></span>
+                        </label>
+                    </div><!-- end section -->
+
+                    <div class="section">
+                        <label class="field prepend-icon">
+                            <textarea class="gui-textarea" id="message" name="message" placeholder="Enter message"></textarea>
+                            <span class="field-icon"><i class="fa fa-comments"></i></span>
+                            <span class="input-hint"> <strong>Hint:</strong> Please enter between 80 - 300
+                                characters.</span>
+                        </label>
+                    </div><!-- end section -->
+
+                  
+
+                    <div class="result"></div><!-- end .result  section -->
+
+                </div><!-- end .form-body section -->
+                <div class="form-footer">
+                    <button type="submit" data-btntext-sending="Sending..." class="button btn btn-primary">Submit</button>
+                    <button type="reset" class="button"> Reset </button>
+                </div><!-- end .form-footer section -->
+            </form>
+        </div><!-- end .smart-forms section -->
+    </div><!-- end .smart-wrap section -->
+</div>
+
+{% endblock body %}
+
+
+
+

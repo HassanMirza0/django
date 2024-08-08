@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Home {% endblock title %}
+
+{% block header %}
+
+
+{% endblock header %}
+{% block body %}
+
+<section id="video">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-intervel="6">
+                <video class="video-fluid" autoplay loop muted>
+                    <source src="/static/images/video (2).mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption font-weight-bold">
+                    <h1>welcome to itechno</h1>
+                    <p>All smartphones,laptop,hardwares devices are here</p>
+                    <a  href="aboutus" class="btn btn-warning btn-sm mt-3 text-white">Learn more</a>
+
+                </div>
+            </div>
+            <div class="carousel-item" data-intervel="5000">
+                <video class="video-fluid" autoplay loop muted>
+                    <source src="/static/images/video2.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption font-weight-bold">
+                    <h1>welcome to itechno</h1>
+                    <p>All smartphones,laptop,hardwares devices are here</p>
+                    <a  href="aboutus" class="btn btn-warning btn-sm mt-3 text-white">Learn more</a>
+
+                </div>
+            </div>
+            <div class="carousel-item" data-intervel="4000">
+                <video class="video-fluid" autoplay loop muted>
+                    <source src="/static/images/Fan - 8064.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption font-weight-bold">
+                    <h1>welcome to itechno</h1>
+                    <p>All smartphones,laptop,hardwares devices are here</p>
+                    <a  href="aboutus" class="btn btn-warning btn-sm mt-3 text-white">Learn more</a>
+
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+
+<section id="product1" class="section-p1">
+    <h2 class="over-flow pt-3 mt-5 mx-1 mb-5" id="head2">Features Products</h2>
+    <div class="  container me-6 " id="allproducts">
+        <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4  mb-4">
+            {% for i in product  %}
+            <div class="col  bg-image hover-zoom"><a href="laptop/{{i.id}}"><img src="{{i.image}}" alt="" class="img-fluid w-100"></a>
+                <div class="des">
+                    <b><a href="laptop/{{i.id}}">
+                            <h5>{{i.name}}</h5>
+                            <h4><i class="bi bi-currency-rupee "></i>{{i.price}}</h4>
+                        </a>
+                    </b>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+
+    </div>
+</section>
+
+<section id="banner" class="section-p2">
+    <div class="container-fluid ">
+        <h3 class="text-white">Repair services</h3>
+        <h2>up to <span> 70% off</span> All accessories are availaible</h2>
+        <a  href="products" class=" btn btn-outline-success">Explore More</a>
+    </div>
+</section>
+
+<section id="writing">
+    <div class="container pt-4 ">
+        <h3> Sale Products</h3>
+        <div class="row row-cols-1 row-cols-lg-3  mb-4">
+            <div class="col my-2">
+                <h4>Gaming Laptops</h4>
+                <h6>
+                    <p>
+                        Gaming laptops are specialized portable computing devices designed to deliver an exceptional
+                        gaming experience. These laptops are equipped with powerful hardware components, such as
+                        high-performance processors, dedicated graphics cards, ample RAM, and fast storage
+                        solutions, all optimized to handle the demanding requirements of modern video games. With
+                        advanced cooling systems to prevent overheating during extended gaming sessions and
+                        high-resolution displays for immersive visuals, gaming laptops cater to the needs of gamers
+                        on the go. They often feature customizable RGB lighting, ergonomic keyboards, and
+                        high-fidelity audio setups to enhance the overall gaming atmosphere. Whether for competitive
+                        esports, graphically intensive AAA titles, or indie favorites, gaming laptops offer the
+                        convenience of gaming without being tethered to a desktop setup, making them a popular
+                        choice for gamers who value both performance and portability.</p>
+                </h6>
+                </p>
+                <div class="text-right">
+                    <a href="laptop/{{4}}" class="btn btn-sm  btn-outline-secondary">Read more</a>
+                </div>
+            </div>
+            <div class="col my-2">
+
+                <h4>iphone 13</h4>
+                <h6>
+                    <p>
+                        The iPhone 13 is Apple's latest addition to its renowned line of smartphones. Boasting an
+                        array
+                        of advanced features and improvements, the iPhone 13 offers a seamless blend of innovation
+                        and
+                        design. With its powerful A15 Bionic chip, the device delivers impressive performance and
+                        efficiency, enhancing both everyday tasks and resource-intensive applications. The stunning
+                        Super Retina XDR display offers vibrant colors and deep blacks, making visuals come to life.
+                        The
+                        iPhone 13's camera system has been enhanced, enabling users to capture stunning photos and
+                        videos even in challenging lighting conditions, thanks to features like Night mode and
+                        Photographic Styles. The device also supports 5G connectivity, ensuring faster download and
+                        streaming speeds. As with previous iterations, the iPhone 13 showcases Apple's commitment to
+                        cutting-edge technology and user-centric design, making it a compelling choice for tech
+                        enthusiasts and smartphone users alike.</p>
+                </h6>
+                <div class="text-right">
+                    <a href="laptop/{{11}}" class="btn btn-sm  btn-outline-secondary">Read more</a>
+                </div>
+            </div>
+            <div class="col my-2">
+
+                <h4>airpods</h4>
+                <h6>
+                    <p>
+                        Earpods, also known as earbuds, are compact and lightweight audio devices designed to fit
+                        snugly
+                        within the ears. These portable gadgets have become an integral part of modern audio
+                        consumption, offering users a convenient and immersive way to enjoy music, podcasts, calls,
+                        and
+                        more. With their sleek and ergonomic design, earpods provide a comfortable listening
+                        experience
+                        even during extended use. Many earpod models come equipped with advanced features such as
+                        noise
+                        cancellation, touch controls, and seamless connectivity to devices via Bluetooth technology.
+                        Whether used during workouts, commutes, or simply relaxing, earpods have revolutionized
+                        personal
+                        audio, offering a harmonious blend of style, functionality, and portability in a single,
+                        wireless package.Earpods have transformed the way we interact with audio content, providing
+                        a
+                        blend of convenience, portability, and advanced technology that has reshaped personal audio
+                        consumption. As technology continues to evolve, earpods are likely to incorporate even more
+                        innovative features, further enhancing our auditory experiences.</p>
+                </h6>
+                <div class="text-right">
+                    <a href="laptop/{{10}}" class="btn btn-sm  btn-outline-secondary">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}

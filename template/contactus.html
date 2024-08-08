@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+
+{% block title %} camera {% endblock title %}
+
+
+{% block body %}
+
+
+<div class="container mt7  ">
+    <div class="row bg-light" style="
+    border-radius: 24px;
+    padding: 25px;
+">
+        <div class="col-sm-6 mt-3">
+            <h4 class="text-uppercase mt-4  fw">Address</h4>
+            <p>
+                    <i class="bi bi-house-fill"></i>
+                17A/9, Site-12 Industrial Area, Chandni Chowk, Old Delhi - 110006, Delhi, India
+            </p>
+            <br>
+            <h4 class="text-uppercase fw">Business hours</h4>
+            <p>
+                <i class="bi bi-briefcase-fill"></i>
+                Monday-Saturday: 7:30am to 4pm<br>
+                Sunday: Closed</p>
+            <br>
+            <h4 class="text-uppercase fw">
+                Email
+            </h4>
+            <p>
+                <a href="#"><i class="bi bi-envelope-fill px-2"></i>itechno@gmail.com</a>
+            </p>
+            <br>
+            <h4 class="text-uppercase fw">Phone</h4>
+            <p>
+                <i class="bi bi-telephone-fill px-2"></i>
+                    <a href="#">+91-9811715885<br>
+                <i class="bi bi-telephone-fill px-2"></i>
+
+                    +91-9811411700</a>
+            </p>
+            <br>
+            <h4 class="text-uppercase"></h4>
+        </div>
+        <div class="col-sm-6">
+            <div class="container mb">
+                <h2 class="fw">Nice to hear from you</h2>
+                <p>
+                    Get accurate quotes. Please share your Name, Email, Phone No & tell us What Problem are you Facing 
+                    requests if any in your inquiry.
+                </p>
+                <form method="post" action="{% url 'contactus' %}" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-1">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" placeholder="Enter your Name" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-1">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" placeholder="Enter your Email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-1">
+                        <label for="phoneNo" class="form-label">Phone No</label>
+                        <input type="text" name="phoneNo" placeholder="Enter Phone No" class="form-control" id="phoneNo" required>
+                        <div class="invalid-feedback">Please enter your phone number.</div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="desc" class="form-label">Message</label>
+                        <textarea class="form-control" name="desc" placeholder="Enter a message" id="desc" rows="4" required></textarea>
+                        <div class="invalid-feedback">Please enter a message.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <!-- <form method="post" action="contactus" class="needs-validation">
+                    {% csrf_token %}
+                    <div class="has-validation">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="Name" name="name" placeholder="Enter your Name" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text"></div>
+                       
+                    
+                    </div>
+                    <div class="mb-1">
+                        <label for="exampleInputPassword1" class="form-label"></label>
+                        <input type="email" name="email" placeholder="Enter your Email" class="form-control">
+        
+                    </div>
+                    <div class="mb-1">
+                        <label for="phoneNo" class="form-label"></label>
+                        <input type="password" name="phoneNo" placeholder="Enter Phone No" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-4">
+                        <label for="exampleFormControlTextarea1" class="form-label"> </label>
+                        <textarea class="form-control" name="desc" placeholder="Enter a message" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <span class="input-hint"> </span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary ">Submit</button>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // JavaScript to validate the form before submission
+    (function () {
+        'use strict';
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation');
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
+
+
+{% endblock body %}

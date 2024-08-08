@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.product_title}} {% endblock title %}
+
+
+{% block body %}
+
+<div class="container" id="productsdetails">
+    <div class="row">
+        <div class="col-md-12 col-lg-7 ">
+
+            <img src="/{{product.image}}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-12 col-lg-5 rightcol ">
+            <h3 id="namepr{{product.id}}">{{product.name}}</h3>
+
+            <div class="discription mb-3">
+
+                <span class="text-secondary"> {{product.desc |safe}}</span>
+                {% comment %} <div class="rating mb-2" style="justify-content: start;">
+                    <i class="bi bi-star-fill clr"></i>
+                    <i class="bi bi-star-fill clr"></i>
+                    <i class="bi bi-star-fill clr"></i>
+                    <i class="bi bi-star-fill clr"></i>
+                    <i class="bi bi-star-fill clr"></i>
+
+                </div> {% endcomment %}
+            </div>
+            <span class="ms-1 mt-2" style="font-size: 20px;"> <b> <i class="bi bi-currency-rupee "></i>
+                    {{product.price}}</b></span> &nbsp;&nbsp;&nbsp; (incl.of all taxes)<br>
+           
+                <a href="{% url 'cart_add' product.id %}?next={{ request.get_full_path }}" class="btn btn-primary mt-3 ms-2  " id="pr">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3 mb-5" id="navdis">
+    <div class="row" id="navdis">
+        <div class="col-md-10">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Discription</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Additional
+                        information</button>
+                </li>
+
+
+            </ul>
+            <div class="tab-content" id="myTabContent" style="margin-top: 31px;">
+                <div class="tab-pane fade show active mb" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    {{product.sub_desc |safe}}
+
+
+                </div>
+                <div class="tab-pane fade  mt-4" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    {{product.add_info |safe}}
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container  mb-5 mt-4" id="also">
+    <h2 class="text-center fw-bold  mb-5">You May Also Like</h2>
+    <div class="row row-cols-1 row-cols-md-2  row-cols-lg-4 g-4  mb-5">
+        {% for i in product_extra|slice:"1:5" %}
+        <div class="col  bg-image hover-zoom"><a href="/laptop/{{i.id}}"><img src="/{{i.image}}" alt=""
+                    class="img-fluid" style="min-width:70%;"></a>
+            <div class="des">
+                <span>{{i.brand_name}}</span>
+                <b><a href="/laptop/{{i.id}}">
+                        <h5>{{i.name}}</h5>
+                        <h4><i class="bi bi-currency-rupee "></i>{{i.price}}</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock body %}
+<!-- 
+{% block js %}
+<script>
+
+
+    console.log('working');
+    if (sessionStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+
+
+
+
+
+    }
+    $('.cart').click(function () {
+        console.log('clicked');
+        var idstr = this.id.toString();
+        console.log(idstr);
+        if (cart[idstr] != undefined) {
+            cart[idstr] = cart[idstr] + 1;
+        }
+        else {
+            cart[idstr] = 1;
+        }
+        console.log(cart);
+        updateCart(cart);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    });
+
+    // // $('#popcart').popover();
+
+    // updatePopover(cart)
+
+    // function updatePopover(cart) {
+
+    //     var popstr = "";
+    //     popstr = popstr + "<h6>Cart for your items in my shopping cart</h6><div class='mx-4' >";
+    //     var i = 1;
+
+    //     for (var item in cart) {
+    //         // console.log(cart);
+    //         // console.log("name" + item);
+    //         popstr = popstr + "<b>" + i + "</b>. ";
+    //         popstr = popstr + document.getElementById("name" + item).innerHTML.slice(0, 15) + "... Qty: " + cart[item] + '<br>';
+    //         i = i + 1;
+
+    //     }
+    //     popstr = popstr + "</div>"
+    //     document.getElementById('popcart').setAttribute('data-content', popstr);
+    //     $('#popcart').popover('show');
+    // }
+
+    function updatePopover(cart) {
+        var popstr = "";
+        popstr = popstr + "<h6>Cart for your items in my shopping cart</h6><div class='mx-4' >";
+        var i = 1;
+
+        for (var item in cart) {
+            var productId=idstr;
+            var productInfo = getProductInfo(productId);
+            if (productInfo) {
+            popstr += "<b>" + i + "</b>. ";
+            popstr += productInfo.name.slice(0, 15) + "... Qty: " + cart[productId] + '<br>';
+            i++;
+        }
+        }
+
+        popstr = popstr + "</div>"
+        document.getElementById('popcart').setAttribute('data-content', popstr);
+        $('#popcart').popover('show');
+    }
+
+
+    function updateCart(cart) {
+        console.log(cart);
+        for (var item in cart) {
+            document.getElementById('divpr{{product.id}}').innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "'>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+        }
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+        console.log(cart);
+    }
+
+
+    // If plus or minus button is clicked, change the cart as well as the display value
+    $('.divpr').on("click", "button.minus", function () {
+        a = this.id.slice(7,);
+        cart['pr' + a] = cart['pr' + a] - 1;
+        cart['pr' + a] = Math.max(1, cart['pr' + a]);
+        document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+        updateCart(cart);
+    });
+    $('.divpr').on("click", "button.plus", function () {
+        a = this.id.slice(6,);
+        cart['pr' + a] = cart['pr' + a] + 1;
+        document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+        updateCart(cart);
+    });
+
+
+    // Func
+
+    // Function to fetch product information from the server using AJAX
+    
+function getProductInfo( productId, callback) {
+    // You should replace this URL with the actual endpoint that retrieves product info
+    var apiUrl = '/laptop/' + productId; // Example URL structure
+
+    // Send an AJAX GET request to fetch product info
+    $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+            // Handle the successful response from the server
+            callback(response.productInfo); // Pass the product information to the callback
+        },
+        error: function () {
+            // Handle errors, e.g., by displaying an error message
+            console.error('Error fetching product information.');
+        }
+    });
+}
+
+// Usage example:
+
+// Use getProductInfo with a callback
+getProductInfo(productId, function (productInfo) {
+    // Handle the productInfo here
+    console.log(productInfo);
+    // You can perform actions with the productInfo, such as updating the cart
+});
+
+  
+</script>
+{% endblock js %} -->

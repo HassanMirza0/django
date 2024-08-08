@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Login {% endblock title %}
+
+
+{% block body %}
+
+
+
+<div class="container d-flex justify-content-center align-item-center min-vh-100" >
+    <div class="row   rounded-5 bg-white shadow boxarea my-5 p-5">
+        <div class="col-md-6   rounded-4 flex justify-content-center align-item-center flex-column leftbox"
+            style="background-color:#0275d8;; padding:5px ;">
+            <div class="image mb-3">
+                <img src="/static/images/loginpage.jpg" class="img-fluid" style="width: 450px " />
+            </div>
+            <p class="text-white text-center fs-2"
+                style="font-family: 'Courier New', Courier, monospace;  font-weight: 600;">Be Verified
+            <p>
+            <p class="text-white  text-center pb-2" style="font-family: 'Courier New', Courier, monospace; ">Join for
+                Best Products on this Website.</p>
+        </div>
+        <div class="col-md-6 rightbox">
+            <div class="row align-item-center">
+                <div class="header-text text-center mb-4">
+                    <h2 style="font-weight: 800;"><b>signup Form</b></h2>
+                    <p>Create a free account or login</p>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3  p-holder">
+                        <input type="text" class="form-control form-control-lg fs-6" name="first_name"
+                            placeholder="First Name" />
+                    </div>
+                    <div class="input-group mb-3  p-holder">
+                        <input type="text" class="form-control form-control-lg fs-6" name="last_name"
+                            placeholder="Last Name" />
+                    </div>
+                    <div class="input-group mb-3  p-holder">
+                        <input type="text" class="form-control form-control-lg fs-6" name="username"
+                            placeholder="User Name" />
+                    </div>
+                    <div class="input-group mb-1">
+                        <input type="password" class="form-control form-control-lg fs-6" name="password"
+                            placeholder="Password" />
+                    </div>
+                    <div class="input-group mb-3 d-flex justify-content-between">
+                        <div class="form-check mt-3">
+                            <input type="checkbox" class="form-check-input" id="form-check" />
+                            <label for="form-check" class="text-secondary form-check-abel">
+                                <small> I accept Terms of use & privacy policy</small></label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <button type="submit" class="btn btn-lg btn-primary w-100 f-6">sign up</button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-lg btn-light w-100 f-6"><img
+                                src="/static/images/google.png"
+                                style="width: 25px;height:26px ; background-color:#ececec; border-radius: 50px;"
+                                class="me-2" alt=""><small>sign up with Google</small></button>
+                    </div>
+                    <div class="row text-center">
+                        <small> Already have an  account? <a href="login_page" >Login here</a></small>
+                    </div>
+
+                </form>
+                <p class="text-center mt-3">copywrite@itechno.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

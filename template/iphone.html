@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+
+{% block title %} camera {% endblock title %}
+
+
+{% block body %}
+
+<div class="container" id="productsdetails">
+    <div class="row">
+        <div class="col-md-7">
+
+            <img src="/static/images/iphone.png" alt="" class="img-fluid" id="">
+        </div>
+        <div class="col-md-5">
+            <h3>Apple iPhone 13 Pro max (128GB, Blue/midnight/green/starlight)</h3>
+
+            <div class="discription mt-3">
+                <p>
+
+                    <span> BOAt Wave Electra 1.81 Inch HD Display Smart Watch<br>
+                        <div class="rating my-3" style="justify-content: start;" >
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            <i class="bi bi-star-fill clr"></i>
+                            
+                        </div>
+                        <h4><i class="bi bi-currency-rupee "></i>{{price}}</h4>
+                        <br>
+                        Price : ` 7,990<br>
+                        You Save ` 5,691 (71%)<br>
+                        MRP: ` 7,990<br>
+                        Free Shipping</span>
+                </p>
+
+                <button type="button" class="btn btn-primary btn-lg  mt-4" id="addtocart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="navdis">
+    <div class="row" id="navdis">
+        <div class="col-md-10">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Discription</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Additional
+                        information</button>
+                </li>
+
+
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active mb" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    <ul class="mt-4">
+                        <h5>Key Features</h5>
+                        <li>Display: 6.1 inches (15.4 cm), Super Retina XDR OLED</li>
+                        <li>Memory: 128GB ROM</li>
+                        <li>Processor: Apple A15 Bionic, Hexa Core</li>
+                        <li>Camera: 12 MP + 12 MP Dual Rear & 12 MP Front Camera</li>
+                        <li>Security (Lock): Password | PIN | Face Unlock</li>
+                        <li>Battery: 15W Wireless Charging</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade  mt-4" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    <p>Model : Apple iPhone 13 Pro Max<b></b><br><br>
+                        Get amazing super-fast responsiveness when you buy Apple iPhone 13 online, which runs on the iOS 15 Operating System which ensures fast and comfortable usage. It is having sensors like Barometer, Proximity sensor, Three‑axis gyro, Accelerometer, Ambient light sensor for effective usability. <br><br> </p>
+                    <ol>
+
+
+                        <li> Lithium-Ion Battery to let you work for long</li>
+                        <li>128GB Storage to store files easily</li>
+                        <li>Wide And Ultra-Wide Cameras with 12 MP selfie camera takes amazing pictures</li>
+                        <li>5G Speed Support for ultra-fast sharing and downloading</li>
+                        <li>4GB RAM ensures seamless performance</li>
+                        <li>Face ID enabled by TrueDepth camera</li>
+                        <li> Additional ₹2,000 off for employees of select organisations.</li>
+                    </ol>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container  mb-5 " id="also">
+    <h2 class="text-center mb-5">You May Also Like</h2>
+    <div class="row row-cols-1 row-cols-md-2  row-cols-lg-4 g-4  mb-4">
+        <div class="col  bg-image hover-overlay hover-zoom hover-shadow ripple"><a href="charger"><img src="/static/images/charger.jpg"
+                alt="" class="img-fluid " style="min-width:70%;"></a>
+            <div class="des">
+                <span>iPhone</span>
+                <b><a href="charger">
+
+                        <h5> charger</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="camera"><img src="/static/images/camera.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>Nikon</span>
+                <b><a href="camera">
+
+                        <h5>Camera</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="iphone"><img src="/static/images/iphone.png" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>iphone</span>
+                <b><a href="iphone">
+
+                        <h5>iphone 13 pro Max</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+        <div class="col"><a href="smartWatch"><img src="/static/images/smartwatch.jpg" alt="" class="img-fluid"></a>
+            <div class="des">
+                <span>boat</span>
+                <b><a href="smartWatch">
+
+                        <h5>Smart Watch</h5>
+                        <h4>$9679</h4>
+                    </a>
+                </b>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock body %}

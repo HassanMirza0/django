@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Login {% endblock title %}
+
+
+{% block body %}
+
+<section id="video">
+
+
+    <div class="carousel-inner col-md-12">
+        
+        <div class="carousel-item active" data-intervel="6">
+            <video class="video-fluid" autoplay loop muted>
+                <source src="/static/images/video (2).mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption font-weight-bold " style=" right: 50%; /* Center the caption horizontally */
+            transform: translateX(50%); /* Adjust horizontal positioning */
+            text-align: center; /* Center the text */
+            max-width: 100%; /* Ensure the caption doesn't overflow */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust vertical positioning */
+            bottom: initial; /* Reset the 'bottom' property */">
+                <h1 class="text-start " style="letter-spacing: 4px; font-weight: 900;">Shop With us</h1>
+                <p class="text-start pt-1">All smartphones,laptop,hardwares devices are here at affordable Price & Elevating Your Shopping Experience.</p>
+               <p class="text-start"><a href="/" class="btn btn-outline-secondary btn-lg mt-3 text-white  text-start">Shop Now</a></p>
+               
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="container d-flex justify-content-center align-item-center min-vh-350">
+    <div class="row   rounded-5 bg-white shadow boxarea my-5 p-5">
+        <div class="col-md-7   rounded-4 flex justify-content-center align-item-center flex-column leftbox">
+
+            <div class="header-text text-start mb-5">
+                <h2 style="
+    font-size: 38px;
+    font-weight: 550;
+"><b>ABOUT US</b></h2>
+            </div>
+            <div class="about">
+                <h5 class="mb-5">Welcome to iTechno: Your Ultimate Destination for Cutting-Edge Electronics!</h5>
+                <p>Are you ready to embark on a journey into the world of technology? Look no further than iTechno, your
+                    premier online destination for all things electronic. Whether you're an avid gadget enthusiast, a
+                    gaming guru, or simply seeking to upgrade your home with the latest smart devices, iTechno has you
+                    covered. Let's dive into what makes iTechno the go-to eCommerce platform for all your tech cravings
+                </p>
+                <p>We take pride in offering products that meet the highest standards of quality. Our team of experts
+                    meticulously handpick each item, ensuring that only genuine, reliable, and top-notch electronics
+                    make their way to our virtual shelves. When you shop at iTechno, you can rest assured that you're
+                    investing in products that are built to last</p>
+                <p>Your security is our priority. Our website employs state-of-the-art encryption and security measures
+                    to ensure that your personal information remains confidential. Shop with confidence, knowing that
+                    your data is in safe hands.</p>
+                <a href="login_page" class="  btn btn-outline-dark me-2  " id="abouts-btn"
+                    style="   width: 122px; padding: 8px;">Explore More</a>
+
+            </div>
+
+        </div>
+        <div class="col-md-5 rightbox mt-5">
+            <div class="row align-item-center">
+                <div class="image mt-5 mb-3">
+                    <img src="/static/images/editpersonal.jpg" class="img-fluid"
+                        style="height: 320px; min-width: 250px; ">
+
+                </div>
+                <h6 style="font-weight: 600;">FOUNDER : HASSAN MIRZA</h6>
+                <div class="container social ">
+
+                    <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+                        href="https://www.facebook.com/profile.php?id=100022923674486" role="button"><i
+                            class="bi bi-facebook"></i></a>
+
+
+                    <!-- Google -->
+                    <!-- <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
+                        class="bi bi-google"></i></a> -->
+
+                    <!-- Instagram -->
+                    <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"
+                        href="https://www.instagram.com/hassan._mirza/" role="button"><i
+                            class="bi bi-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;"
+                        href="https://www.linkedin.com/in/hassanmirza12/" role="button"><i
+                            class="bi bi-linkedin"></i></a>
+                    <!-- Github -->
+                    <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+                        href="https://github.com/HassanMirza0/" role="button"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

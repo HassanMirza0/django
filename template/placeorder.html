@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.product_title}} {% endblock title %}
+
+{% comment %} Total Length :: {{request.session.cart|length}} {% endcomment %}
+
+{% block body %}
+
+
+    {% load cart_tag %}
+    <section class="h-100 gradient-custom">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center my-4">
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="mb-0">Your Order item</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <!-- Single item -->
+                            {% for key,value in request.session.cart.items %}
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                        data-mdb-ripple-color="light">
+                                        <img src="{{value.image}}" class="w-100"  />
+                                        <a href="#!">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+
+                                </div>
+
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>{{value.name}}</strong></p>
+
+                                    
+                                    
+                                    <!-- Data -->
+                                    <p class="text-start text-md-center">
+                                        <strong>Price :&nbsp;&nbsp; {{value.price}}</strong>
+                                    </p>
+                                </div>
+                                  
+
+                                <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                                    <!-- Quantity -->
+                                    
+                                    <!-- Quantity -->
+
+                                    <!-- Price -->
+                                    <p class="text-start text-md-center">
+                                     <span>  <strong> Qty &nbsp;&nbsp;* {{value.quantity}}</strong></span>
+                                    </p><br>
+                                    <p class="text-start text-md-center">
+                                     <span>  <strong>Sub Total: &nbsp;&nbsp;{{ value.price|multiply:value.quantity}}</strong></span>
+                                    </p>
+                                    <!-- Price -->
+                                </div>
+
+                            </div>
+                            <!-- Single item -->
+
+                            <hr class="my-4" />
+                            {% endfor %}
+                            
+                            <!-- Single item -->
+
+                            <!-- Single item -->
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p><strong>Expected shipping delivery</strong></p>
+                            <p class="mb-0">12.10.2020 - 14.10.2020</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4 mb-lg-0">
+                        <div class="card-body">
+                            <p><strong>We accept</strong></p>
+                            <img class="me-2" width="45px"
+                                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                                alt="Visa" />
+                            <img class="me-2" width="45px"
+                                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                                alt="American Express" />
+                            <img class="me-2" width="45px"
+                                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                                alt="Mastercard" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="mb-0">Summary</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Total Products
+                                    <span>{{request.session.cart|length}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Tax
+                                    <span><i class="bi bi-currency-rupee"></i>280</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Shipping charge
+                                    <span><i class="bi bi-currency-rupee"></i>120</span>
+                                </li>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>Total amount</strong>
+                                        <strong>
+                                            <p class="mb-0">(including Tax)</p>
+                                        </strong>
+                                    </div>
+                                    <span><strong><i
+                                                class="bi bi-currency-rupee"></i>{{cart_total_amount|add:120}}</strong></span>
+                                </li>
+                            </ul>
+                            <a  id="rzp-button1" class="btn btn-success w-100  btn-block">
+                                Place Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<button>{{order_id}}</button>
+    <form action="{% url 'thankyou' %}" method="post">
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+        var options = {
+            "key": 'rzp_test_3apX27qdTy04aD', // Enter the Key ID generated from the Dashboard
+            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Acme Corp", //your business name
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "http://127.0.0.1:9000/thankyou",
+            "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                "name": "Gaurav Kumar", //your customer's name
+                "email": "gaurav.kumar@example.com",
+                "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        </script>
+        </form> 
+    {% endblock body %}
